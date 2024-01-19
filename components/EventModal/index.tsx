@@ -24,7 +24,7 @@ export const EventModal = ({
     const formik = useFormik({
         initialValues: {
             name: "",
-            time: null,
+            time: "00:00",
         },
         onSubmit: ({ name, time }) => {
             const scheduleObject = {

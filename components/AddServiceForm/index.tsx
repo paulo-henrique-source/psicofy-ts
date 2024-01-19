@@ -1,6 +1,10 @@
 import { FormikValues } from "formik";
 import * as Styled from "./styles";
-import { TextField } from "@mui/material";
+import { FormHelperText, TextField } from "@mui/material";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 
 type AddServiceFormProps = {
     formik: FormikValues;
@@ -20,17 +24,30 @@ export const AddServiceForm = ({ formik }: AddServiceFormProps) => {
                     fullWidth
                 />
             </div>
+            <div className="time">
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <TimePicker
+                        name="time"
+                        label="Horario"
+                        value={formik.values.time}
+                        onChange={formik.handleChange}
+                        minutesStep={30}
+                    />
+                </LocalizationProvider>
+            </div>
             <div>
                 <TextField
-                    id="time"
-                    name="time"
-                    label="Horario"
+                    id="password"
+                    name="password"
+                    label="Senha de atendimento"
                     variant="outlined"
-                    type="time"
-                    value={formik.values.time}
+                    value={formik.values.password}
                     onChange={formik.handleChange}
                     fullWidth
                 />
+                <FormHelperText id="component-helper-text">
+                    Senha usada para cancelar ou editar o agendamento
+                </FormHelperText>
             </div>
         </Styled.Wrapper>
     );

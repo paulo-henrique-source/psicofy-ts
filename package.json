@@ -21,7 +21,7 @@
     "@mui/material": "^5.15.4",
     "@mui/styles": "^5.15.4",
     "@mui/system": "^5.15.4",
-    "@mui/x-date-pickers": "^6.19.0",
+    "@mui/x-date-pickers": "6.19.0",
     "@types/react-burger-menu": "^2.8.7",
     "date-fns": "^3.2.0",
     "formik": "^2.4.5",
