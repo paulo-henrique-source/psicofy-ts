@@ -15,4 +15,13 @@ export const Wrapper = styled.div`
         background-color: #3183fe;
         cursor: pointer;
     }
+
+    @media (max-width: 415px) {
+        padding: 2rem;
+        height: 90vh;
+
+        .fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
+            height: 100%;
+        }
+    }
 `;

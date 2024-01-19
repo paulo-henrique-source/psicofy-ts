@@ -73,19 +73,19 @@ const Header = ({ mb, pl, width, maxWidth }: IComponentProps) => {
                         onClick={handleDrawerClose}
                         style={style.ItemLinkStyle}
                     >
-                        <Link href="#">Home</Link>
+                        <Link href="/">Home</Link>
                     </ListItem>
                     <ListItem
                         onClick={handleDrawerClose}
                         style={style.ItemLinkStyle}
                     >
-                        <Link href="#">Serviços</Link>
+                        <a onClick={() => scrollToBottom()}>Serviços</a>
                     </ListItem>
                     <ListItem
                         onClick={handleDrawerClose}
                         style={style.ItemLinkStyle}
                     >
-                        <Link href="#">Agenda</Link>
+                        <Link href="/schedule">Agenda</Link>
                     </ListItem>
                 </List>
             </Drawer>
