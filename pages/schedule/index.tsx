@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, SxProps } from "@mui/material";
 import type { NextPage } from "next";
 import Psicologa from "../../public/img/psicologa.png";
@@ -18,9 +18,33 @@ const ScheduleContainerProps: SxProps = {
 };
 
 const Schedule: NextPage = () => {
+    const [windowSize, setWindowSize] = useState({
+        width: undefined,
+        height: undefined,
+    });
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <Grid sx={ScheduleContainerProps}>
-            <Header maxWidth="unset" pl={8} mb={4} />
+            <Header
+                maxWidth="unset"
+                pl={windowSize.width > 415 ? 8 : 0}
+                mb={4}
+            />
             <CalendarComponent />
         </Grid>
     );
