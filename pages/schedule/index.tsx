@@ -42,7 +42,7 @@ const Schedule: NextPage = () => {
         <Grid sx={ScheduleContainerProps}>
             <Header
                 maxWidth="unset"
-                pl={windowSize.width > 415 ? 8 : 0}
+                pl={windowSize.width > 431 ? 8 : 0}
                 mb={4}
             />
             <CalendarComponent />

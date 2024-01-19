@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
         cursor: pointer;
     }
 
-    @media (max-width: 415px) {
+    @media (max-width: 431px) {
         padding: 2rem;
         height: 90vh;
 
